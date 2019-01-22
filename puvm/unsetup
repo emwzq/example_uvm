@@ -1,0 +1,9 @@
+#!/bin/csh
+
+unsetenv QUESTA_HOME 
+unsetenv VCS_HOME 
+unsetenv NCSIM_HOME 
+unsetenv UVM_HOME 
+unsetenv WORK_HOME 
+rm -rf $UVM_DPI_DIR
+unsetenv UVM_DPI_DIR 

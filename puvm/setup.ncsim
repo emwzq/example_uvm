@@ -1,0 +1,8 @@
+#!/bin/csh
+
+source /cad/release/etc/cshrc.cadence.incisiv.13.10.011
+setenv NCSIM_HOME /cad/release/cadence/incisiv/13.10.011 
+setenv UVM_HOME /cad/release/cadence/incisiv/13.10.011/tools/uvm-1.1/uvm_lib/uvm_sv/
+setenv WORK_HOME `pwd`
+setenv SIM_TOOL NCSIM 
+set path = (${NCSIM_HOME}/tools/bin/ ${WORK_HOME}/bin $path)

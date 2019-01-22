@@ -1,0 +1,13 @@
+#!/bin/csh
+
+source /cad/release/etc/cshrc.mentor
+setenv QUESTA_HOME /cad/release/mentor/questasim/10.2/questasim
+setenv UVM_HOME ~/uvm/uvm-1.1d
+setenv WORK_HOME `pwd`
+setenv SIM_TOOL QUESTA 
+set path = (/cad/release/mentor/questasim/10.2/questasim/bin ${WORK_HOME}/bin $path)
+#setenv UVM_HOME /cad/release/mentor/questasim/10.2/questasim/verilog_src/uvm-1.1c
+#setenv UVM_DPI_DIR /cad/release/mentor/questasim/10.2/questasim/uvm-1.1c/linux
+setenv UVM_DPI_DIR $WORK_HOME/uvm_dpi
+mkdir $UVM_DPI_DIR -p
+g++ $UVM_HOME/src/dpi/uvm_dpi.cc -D QUESTA -I$UVM_HOME/src/dpi -I$QUESTA_HOME/include -shared -Bsymbolic -o $UVM_DPI_DIR/uvm_dpi.so

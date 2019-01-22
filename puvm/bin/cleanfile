@@ -1,0 +1,26 @@
+#!/bin/csh
+if ( $SIM_TOOL == "QUESTA" ) then
+rm -rf transcript
+rm -rf work
+rm -rf _log
+rm -rf *.log 
+rm -rf top_tb.vcd*
+rm -rf *.so
+endif
+
+if ( $SIM_TOOL == "VCS" ) then
+rm -rf ucli.key
+rm -rf vc_hdrs.h
+rm -rf csrc
+rm -rf simv.daidir
+rm -rf simv.vdb
+rm -rf simv
+rm -rf top_tb.vcd*
+endif
+
+if ( $SIM_TOOL == "NCSIM" ) then
+rm -rf top_tb.vcd*
+rm -rf INCA_libs
+rm -rf ncverilog.log
+rm -rf ncverilog.key
+endif
